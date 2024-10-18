@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff6347;
+    color: black;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.menu, .order-form, .login-form, .register-form {
+    margin: 2em 0;
+}
+
+.menu-section {
+    text-align: center;
+    margin-bottom: 2em; 
+}
+
+.menu-section h2 {
+    text-align: center; 
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.menu {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px;
+}
+
+.menu-item {
+    background: white;
+    padding: 1em;
+    width: 200px; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 20px); 
+    box-sizing: border-box;
+}
+
+.menu-item img {
+    max-width: 100%;  
+    height: auto;    
+    display: block;  
+    margin: 0 auto 20px; 
+    border-radius: 30px;
+}
+
+.menu-item h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.menu-item p {
+    margin: 0.5em 0;
+}
+
+
+.menu-item h3{
+    margin-bottom: 20px;
+}
+form {
+    background: white;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 0.5em 0 0.2em;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e5533d;
+}
+
+.contact{
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

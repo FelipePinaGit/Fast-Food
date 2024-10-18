@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Restaurante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-----------------------------------------Encabezado-------------------------------->
+    <header>
+        <h1>Fast Food</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#order">Pedido</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!---------------------------------------Menú--------------------------------------->
+    <div class="container">
+        <section id="menu" class="menu-section">
+            <h2>Nuestro Menú</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/imagen 1.jpg') }}">
+                    <h3>Pizza Muzzarella</h3>
+                    <p>Deliciosa pizza con salsa y queso mozzarella.</p>
+                    <p><strong>Precio: $10.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/4quesos.png') }}">
+                    <h3>Pizza 4 quesos</h3>
+                    <p>Mezcla de quesos (mozzarella, cheddar, gorgonzola y parmesano).</p>
+                    <p><strong>Precio: $12.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/peperoni.png') }}">
+                    <h3>Pizza Peperoni</h3>
+                    <p>Pizza con salsa de tomate, queso y rodajas de pepperoni</p>
+                    <p><strong>Precio: $15.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/burguer.png') }}">
+                    <h3>Cheeseburguer</h3>
+                    <p>Hamburguesa con queso cheddar y salsas clásicas.</p>
+                    <p><strong>Precio: $10.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/burguerclasic.png') }}">
+                    <h3>Burguer Clásica</h3>
+                    <p>Hamburguesa de carne de res con lechuga, tomate, cebolla y mayonesa.</p>
+                    <p><strong>Precio: $10.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/burguerBBQ.png') }}">
+                    <h3>Burguer BBQ</h3>
+                    <p>Hamburguesa con salsa barbacoa, cebolla caramelizada y queso ahumado</p>
+                    <p><strong>Precio: $15.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/pancho.png') }}">
+                    <h3>Pamcho Clásico</h3>
+                    <p>Salchicha en pan, con mostaza, ketchup y cebolla.</p>
+                    <p><strong>Precio: $10.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/panchochile.png') }}">
+                    <h3>Chili Dog</h3>
+                    <p>Hot dog cubierto con chili con carne y queso rallado.</p>
+                    <p><strong>Precio: $12.00</strong></p>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='imagen/superpancho.png') }}">
+                    <h3>Super Pancho</h3>
+                    <p>Deliciosa salchicha de cerdo o pollo, servida en un suave y esponjoso pan de hot dog.</p>
+                    <p><strong>Precio: $15.00</strong></p>
+                </div>
+
+            </div>
+        </section>
+        
+            <!-----------------------------------Formulario Pedido-------------------------------->
+        <section id="order" class="order-form">
+            <h2>Realizar Pedido</h2>
+            <form action="/submit_order" method="post">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="address">Dirección:</label><br>
+                <input type="text" id="address" name="address" required><br><br>
+
+                <label for="phone">Teléfono:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="order-details">Detalles del Pedido:</label><br>
+                <textarea id="order-details" name="order-details" rows="4" required></textarea><br><br>
+
+                <input type="submit" value="Enviar Pedido">
+            </form>
+        </section>
+
+        <!------------------------------------Contactos------------------------------------------->
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Teléfono: +123 456 789</p>
+            <p>Email: contacto@restaurante.com</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Delivery Restaurante. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

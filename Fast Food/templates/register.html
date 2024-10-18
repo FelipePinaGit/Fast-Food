@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Delivery Restaurante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Delivery Restaurante</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Menú</a></li>
+                <li><a href="{{ url_for('index') }}#order">Pedido</a></li>
+                <li><a href="{{ url_for('index') }}#contact">Contacto</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="register" class="register-form">
+            <h2>Registro</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form method="POST" action="{{ url_for('register') }}">
+                <label for="name">Username:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+                <button type="submit">Register</button>               
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Delivery Restaurante. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
